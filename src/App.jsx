@@ -24,13 +24,17 @@ export default function App() {
 
   return (
     <div className="relative h-screen bg-gray-100 dark:bg-gray-900">
-      {/* Mobile and Desktop Nav */}
-      <div className={`fixed inset-y-0 left-0 transform ${isNavExpanded ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} transition-transform duration-300 ease-in-out z-30`}>
+      {/* Mobile Nav (Overlay) and Desktop Nav (Push content) */}
+      <div className={`fixed md:fixed inset-y-0 left-0 transform 
+        ${isNavExpanded ? 'translate-x-0' : '-translate-x-full md:translate-x-0'} 
+        transition-transform duration-300 ease-in-out z-30`}>
         <Nav isExpanded={isNavExpanded} toggleNav={toggleNav} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </div>
 
       {/* Main Content */}
-      <main className={`h-full overflow-auto transition-all duration-300 ease-in-out ${isNavExpanded ? 'ml-64' : 'ml-0 md:ml-16'}`}>
+      <main className={`h-full overflow-auto 
+        md:transition-all md:duration-300 md:ease-in-out 
+        ${isNavExpanded ? 'md:ml-64' : 'md:ml-16'}`}>
         <div className="md:hidden p-4">
           <button 
             onClick={toggleNav}

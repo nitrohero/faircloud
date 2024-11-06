@@ -298,8 +298,8 @@ export default function Dashboard() {
         </div>
         {/* div3 */}
         <div className={`relative ${isExpandedDiv1 ? "overflow-hidden" : ""}`}>
-          {isExpandedDiv2 && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+          {isExpandedDiv1 && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"></div>
           )}
           <div
             className={`${
